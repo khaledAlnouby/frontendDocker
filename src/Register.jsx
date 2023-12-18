@@ -33,7 +33,7 @@ const Register = () => {
         };
         await axios.post(`${API_BASE_URL}/api/signup`, requestData);
         console.log('User registered successfully');
-        Navigate('/login'); 
+        Navigate('/Login'); 
     } catch (error) {
       console.error('Registration failed:', error);
     }

@@ -16,7 +16,7 @@ const Patient_dashboard = () => {
 
 
   useEffect(() => {
-    axios.get(`${API_BASE_URL}api/patient_appointment`)
+    axios.get(`${API_BASE_URL}/api/patient_appointment`)
       .then(response => {
         setDoctors(response.data.doctors);
       })

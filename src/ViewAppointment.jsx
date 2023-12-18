@@ -14,7 +14,7 @@ const ViewAppointments = () => {
   useEffect(() => {
     const fetchPatientEmails = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/get_all_patient_emails');
+        const response = await axios.get(`${API_BASE_URL}/api/get_all_patient_emails`);
         setPatientEmails(response.data.patientEmails);
       } catch (error) {
         console.error('Error fetching patient emails:', error.message);
@@ -44,7 +44,7 @@ const ViewAppointments = () => {
 
   const handleCancelAppointment = async (appointment) => {
     try {
-      const response = await axios.put(`${API_BASE_URL}api/cancel_appointment`, {
+      const response = await axios.put(`${API_BASE_URL}/api/cancel_appointment`, {
         patient_email: selectedPatient,
         doctor_email: appointment.doctor_email,
         day: appointment.day,
